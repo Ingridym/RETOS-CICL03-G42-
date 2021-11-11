@@ -1,0 +1,23 @@
+url modulo: https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/open-api-catalog/cloud/
+
+url plantilla : https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cloud/cloud
+
+JSON: {"items":[],"hasMore":false,"limit":25,"offset":0,"count":0,"links":[{"rel":"self","href":"https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cloud/cloud"},{"rel":"edit","href":"https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cloud/cloud"},{"rel":"describedby","href":"https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/metadata-catalog/cloud/item"},{"rel":"first","href":"https://g501f2eee1fb184-retos.adb.sa-santiago-1.oraclecloudapps.com/ords/admin/cloud/cloud"}]}
+
+Get: SELECT * FROM RETO1
+
+POST: BEGIN
+INSERT INTO RETO1 (ID,BRAND,MODEL,CATEGORY_ID,NAME) VALUES(:id,:brand, :model, :category_id, :name);
+:status_code :=201;
+END;
+
+PUT: BEGIN
+    UPDATE RETO1 SET BRAND = :brand, MODEL = :model, CATEGORY_ID = :category_id, NAME = :name WHERE ID = :id;
+    :status_code :=201;
+
+END;
+
+DELETE: BEGIN
+    DELETE FROM RETO1 WHERE ID = :id;
+    :status_code :=204;
+END;
